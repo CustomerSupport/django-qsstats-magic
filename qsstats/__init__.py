@@ -121,8 +121,8 @@ class QuerySetStats(object):
         data = dict((to_dt(item['d']), item['agg']) for item in aggregate_data)
 
         stat_list = []
-        dt = start
-        while dt < end:
+        dt = to_dt(start)
+        while dt < to_dt(end):
             idx = 0
             value = 0
             for i in range(num):
