@@ -2,10 +2,13 @@
 import datetime
 
 from django.test import TestCase
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from qsstats import QuerySetStats, InvalidInterval, DateFieldMissing, QuerySetMissing
 from qsstats import compat
 from .utils import _remove_time
+
+User = get_user_model()
+
 
 class QuerySetStatsTestCase(TestCase):
     def test_basic_today(self):
